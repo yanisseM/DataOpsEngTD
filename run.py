@@ -39,6 +39,20 @@ def data_sample (data: pd.DataFrame) -> pd.DataFrame:
     sampled_dataframe = data.sample(50)
     return sampled_dataframe
 
+def multiplier_dataset(data: pd.DataFrame) -> pd.DataFrame:
+    """
+    Multiplie le dataset sample par 3
+
+    Paramètres :
+        - data : Le DataFrame à multiplier.
+
+    Renvoie :
+        Un DataFrame contenant le dataset multiplié.
+    """
+    multiplied_data = pd.concat([data] * 3, ignore_index=True)
+
+    return multiplied_data
+
 
 
 if __name__ == '__main__':
