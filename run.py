@@ -31,6 +31,15 @@ def rename_columns(data: pd.DataFrame) -> pd.DataFrame:
     
     return data_renamed
 
+    
+def data_sample (data: pd.DataFrame) -> pd.DataFrame:
+    """
+    Une fonction qui prend une partie du Dataset (sample) de 50 lignes
+    """
+    sampled_dataframe = data.sample(50)
+    return sampled_dataframe
+
+
 
 if __name__ == '__main__':
     """
