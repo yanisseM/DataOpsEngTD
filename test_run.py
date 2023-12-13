@@ -10,7 +10,6 @@ def test_import_data():
     data = import_data()
     assert data.shape[0] > 0
 
-
 def test_rename_columns():
     """
     Test rename_columns function
@@ -18,7 +17,6 @@ def test_rename_columns():
     data = import_data()
     data_renamed = rename_columns(data)
     assert "sepal_length" in data_renamed.columns
-
 
 def test_data_sample():
     """

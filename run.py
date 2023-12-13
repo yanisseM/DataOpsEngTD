@@ -10,6 +10,7 @@ def main():
     data = import_data()
     data = rename_columns(data)
 
+    
 def import_data() -> pd.DataFrame:
     """
     Import CSV file as a DataFrame
@@ -32,6 +33,7 @@ def rename_columns(data: pd.DataFrame) -> pd.DataFrame:
 
     return data_renamed
 
+    
 def data_sample(data: pd.DataFrame) -> pd.DataFrame:
     """
     Extract a sample of 50 rows from the dataset
@@ -50,7 +52,9 @@ def multiplier_dataset(data: pd.DataFrame) -> pd.DataFrame:
         A DataFrame containing the multiplied dataset.
     """
     multiplied_data = pd.concat([data] * 3, ignore_index=True)
+
     return multiplied_data
+
 
 if __name__ == '__main__':
     """
