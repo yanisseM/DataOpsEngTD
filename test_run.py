@@ -1,11 +1,11 @@
 """
 Tests
 """
-from run import import_data, rename_columns,data_sample
+from run import import_data, rename_columns, data_sample
 
 def test_import_data():
     """
-    Test
+    Test import_data function
     """
     data = import_data()
     assert data.shape[0] > 0
@@ -13,7 +13,7 @@ def test_import_data():
 
 def test_rename_columns():
     """
-    Doc
+    Test rename_columns function
     """
     data = import_data()
     data_renamed = rename_columns(data)
@@ -22,10 +22,10 @@ def test_rename_columns():
 
 def test_data_sample():
     """
-    Test de la fonction d'échantillon
+    Test data_sample function
     """
     data = import_data()
     echantillon = data_sample(data)
-    assert len(echantillon) == 50, f"La taille de l'échantillon devrait être 50, mais elle est {len(echantillon)}."
-    print("Les tests ont réussi avec succès.")
-
+    expected_length = 50
+    assert len(echantillon) == expected_length, f"Expected the sample size to be {expected_length}, but it is {len(echantillon)}."
+    print("All tests passed successfully.")

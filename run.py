@@ -5,58 +5,55 @@ import pandas as pd
 
 def main():
     """
-    Main
+    Main function to execute the data processing pipeline
     """
     data = import_data()
     data = rename_columns(data)
 
-    
 def import_data() -> pd.DataFrame:
     """
-    Import csv file as a dataframe
+    Import CSV file as a DataFrame
     Output: data [pd.DataFrame]
     """
     data = pd.read_csv("data/iris.csv")
-    print(data.shape)
+    print(data.shape)  # Print the shape of the DataFrame
     return data
 
 def rename_columns(data: pd.DataFrame) -> pd.DataFrame:
     """
-    Doc
+    Rename columns of the DataFrame
     """
-    data_renamed = data.rename(columns={"sepal.length": 'sepal_length',
-                                "sepal.width": 'sepal_width',
-                                "petal.length": 'petal_length',
-                                "petal.width": 'petal_width'})
-    
+    data_renamed = data.rename(columns={
+        "sepal.length": 'sepal_length',
+        "sepal.width": 'sepal_width',
+        "petal.length": 'petal_length',
+        "petal.width": 'petal_width'
+    })
+
     return data_renamed
 
-    
-def data_sample (data: pd.DataFrame) -> pd.DataFrame:
+def data_sample(data: pd.DataFrame) -> pd.DataFrame:
     """
-    Une fonction qui prend une partie du Dataset (sample) de 50 lignes
+    Extract a sample of 50 rows from the dataset
     """
     sampled_dataframe = data.sample(50)
     return sampled_dataframe
 
 def multiplier_dataset(data: pd.DataFrame) -> pd.DataFrame:
     """
-    Multiplie le dataset sample par 3
+    Multiply the sample dataset by 3
 
-    Paramètres :
-        - data : Le DataFrame à multiplier.
+    Parameters:
+        - data: The DataFrame to multiply.
 
-    Renvoie :
-        Un DataFrame contenant le dataset multiplié.
+    Returns:
+        A DataFrame containing the multiplied dataset.
     """
     multiplied_data = pd.concat([data] * 3, ignore_index=True)
-
     return multiplied_data
-
-
 
 if __name__ == '__main__':
     """
-    Doc
+    Main entry point for script execution
     """
     main()
